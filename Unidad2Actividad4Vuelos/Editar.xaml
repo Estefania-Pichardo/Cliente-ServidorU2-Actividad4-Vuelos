@@ -1,0 +1,68 @@
+﻿<Window x:Class="Unidad2Actividad4Vuelos.Editar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Unidad2Actividad4Vuelos"
+        mc:Ignorable="d"
+        Title="Editar" Height="500" Width="550" Loaded="Window_Loaded">
+    <DockPanel>
+        <DockPanel.Background>
+            <ImageBrush ImageSource="fondo2.jpg" Stretch="Fill"></ImageBrush>
+        </DockPanel.Background>
+        <Grid  DockPanel.Dock="Top" Height="70" Margin="10" >
+            <Image Source="globo.png" Margin="5" HorizontalAlignment="Left"></Image>
+            <TextBlock FontSize="30" TextAlignment="Center"
+                   Padding="10"  Foreground="White"
+                   FontWeight="DemiBold" VerticalAlignment="Center">
+               Editar vuelo
+            </TextBlock>
+        </Grid>
+        <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Bottom" Margin="0" Height="70">
+            <WrapPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="20"></Setter>
+                    <Setter Property="Margin" Value="20,0"></Setter>
+                    <Setter Property="Padding" Value="5"></Setter>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                    <Setter Property="BorderThickness" Value="0"></Setter>
+                </Style>
+            </WrapPanel.Resources>
+
+            <Button x:Name="btnAceptar" Click="btnAceptar_Click">
+                <Image Source="aceptar.png"></Image>
+            </Button>
+            <Button x:Name="btnCancelar" Click="btnCancelar_Click">
+                <Image Source="cerrar(1).png"></Image>
+            </Button>
+        </WrapPanel>
+
+        
+        <StackPanel Margin="10,20" DockPanel.Dock="Right">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="16"></Setter>
+                    <Setter Property="Margin" Value="5"></Setter>
+                    <Setter Property="FontWeight" Value="DemiBold"></Setter>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="Margin" Value="5"></Setter>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock>Hora:</TextBlock>
+            <TextBox Margin="5" Text="{Binding Hora}" Name="txtHora" IsReadOnly="True"></TextBox>
+            <TextBlock>Destino:</TextBlock>
+            <TextBox Margin="5" Text="{Binding Destino}" Name="txtDestino"></TextBox>
+            <TextBlock>Vuelo:</TextBlock>
+            <TextBox Margin="5" Text="{Binding Vuelo}" Name="txtVuelo" IsReadOnly="True"></TextBox>
+            <TextBlock>Estado:</TextBlock>
+            <ComboBox Margin="5" SelectedValue="{Binding Estado}" 
+                      Name="cmbEstado" FontSize="14">
+
+            </ComboBox>
+        </StackPanel>
+    </DockPanel>
+    
+</Window>
